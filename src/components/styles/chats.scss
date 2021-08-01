@@ -1,0 +1,63 @@
+@import 'src/styles/global.scss';
+.display {
+    border: blue 1px solid;
+    height: 41rem;
+    width: 30rem;
+    margin-left: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(199, 199, 199);
+    .profile-bar {
+        height: 100px;
+        background-color: white;
+    }
+    .messagesInColumn { 
+        border: rgb(81, 255, 0) solid;
+        display: flex;
+        flex-direction: column;
+        .msg{
+            border: yellow solid;
+            box-shadow: 5px 5px 5px grey;
+            height: auto;
+            width: 10rem;
+            margin: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            color: rgb(32, 32, 32);
+            font-size: larger;
+            align-items: center;
+        }
+        .received {
+            align-self: flex-start;
+        }
+        .sent {
+            align-self: flex-end;
+        }
+
+    }
+    .input {
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+
+        .input-msg {
+            padding: 10px;
+            width: 20rem;
+            height: 70%;
+            border-radius: 10px;
+            border: rgb(226, 226, 226) 2px solid;
+        }
+        .input-btn {
+            padding: 10px;
+            width: 5rem;
+            height: 70%;
+            border-radius: 10px;
+            border: rgb(226, 226, 226) 2px solid;
+        }
+    }
+}
