@@ -1,63 +1,84 @@
-@import 'src/styles/global.scss';
+@import '../../styles/global.scss';
+@import '../../styles/variables.scss';
 .display {
-    border: blue 1px solid;
     height: 41rem;
     width: 30rem;
-    margin-left: 18rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgb(199, 199, 199);
+    background-color: $psh-light-grey;
     .profile-bar {
-        height: 100px;
-        background-color: white;
+        height: 6.5rem;
+        .chat {
+            height: 100%;
+            justify-content: start;
+            background-color: $psh-white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .chat-Icon {
+                width: auto;
+                height: 5rem;
+                margin-left: 15px;
+            }
+            .chat-info {
+                width: 15rem;
+                margin-left: 10px;
+                align-self: center;
+                .chat-name {
+                    color: rgb(39, 39, 39);
+                    font-size: 1.3rem;
+                    font-weight: bolder;
+                }
+            }
+        }
     }
     .messagesInColumn { 
-        border: rgb(81, 255, 0) solid;
+        height: 31rem;
         display: flex;
         flex-direction: column;
-        .msg{
-            border: yellow solid;
+        .msg{ 
             box-shadow: 5px 5px 5px grey;
             height: auto;
-            width: 10rem;
+            width: auto;
+            max-width: 28rem;
             margin: 10px;
             padding: 10px;
             background-color: white;
             border-radius: 5px;
             color: rgb(32, 32, 32);
-            font-size: larger;
+            font-size: 1rem;
             align-items: center;
         }
         .received {
             align-self: flex-start;
         }
         .sent {
+            background-color: rgb(252,237,237);
             align-self: flex-end;
         }
-
     }
     .input {
-        height: 50px;
+        height: 3.5rem;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
         background-color: rgb(255, 255, 255);
-
         .input-msg {
             padding: 10px;
             width: 20rem;
             height: 70%;
             border-radius: 10px;
-            border: rgb(226, 226, 226) 2px solid;
+            border: $psh-light-grey 2px solid;
+            background-color: $input-box;
         }
         .input-btn {
             padding: 10px;
             width: 5rem;
             height: 70%;
             border-radius: 10px;
-            border: rgb(226, 226, 226) 2px solid;
+            border: $psh-light-grey 2px solid;
+            background-color: $input-btn;
         }
     }
 }

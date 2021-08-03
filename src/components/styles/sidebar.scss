@@ -1,10 +1,8 @@
-@import "/src/styles/global.scss";
-@import "/src/styles/variables";
+@import '../../styles/global.scss';
+@import '../../styles/variables.scss';
 *{
     box-sizing: border-box;
-
 }
-
 .nav-menu {
     background-color: rgb(27, 27, 27);
     width: 18rem;
@@ -12,87 +10,56 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    transition: 850ms;
-}
-.nav-menu.active {
-    left: 0;
-    transition: 350ms;
-}
-.react-chat {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: red;
-    height: 6rem;
-    img {
-        margin-left: 10px;
-        width: auto;
-        height: 50px;
-    }
-    h1 {
-        font-size: 1.5rem;
-        color:white;
-        margin-left: 10px;
-    }
-}
-.navbar {
-    position: fixed;
-    top: 20px;
-    right: 150px; //era left
-    .menu-bars {
-        margin-left: 1rem;
-        font-size: 1.5rem;
-        background: none;
-    }
-}
-.navbar-toggle {
-    width: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    :active {
-        color: #000;
-    }
-}
-.chat {
-    height: 5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: grey;
-    font-size: small;
-    align-items: start;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    .chat-Icon {
-        width: auto;
-        height: 3.5rem;
-        border-radius: 50px 50px;
-        margin-left: 15px;
-    }
-    .chat-info {
-        width: 9rem;
-        flex-direction: column;
-        margin-top: 5px;
-        text-align: start;
-        .chat-name {
-            color: white;
-            font-size: medium;
+    .chat {
+        height: 5rem;
+        display: flex;
+        border-bottom: $psh-grey 1px solid;
+        flex-direction: row;
+        justify-content: space-between;
+        color: $psh-grey;
+        font-size: small;
+        align-items: start;
+        padding: 10px 10px 10px 0px;
+        .chat-Icon {
+            width: auto;
+            height: 3.5rem;
+            border-radius: 50px 50px;
+            margin-left: 15px;
+        }
+        .chat-info {
+            width: 9rem;
+            flex-direction: column;
+            margin-top: 5px;
+            text-align: start;
+            .chat-name {
+                color: $psh-white;
+                font-size: 0.75rem;
+            }
+        }
+        &:hover {
+            background-color: rgb(65, 64, 64);
+        }
+        &:active {
+            border-right: 3px $psh-red solid;
         }
     }
-    .chat-time {
-        justify-content: right;
-        margin-top: 5px;
-        margin-right: 5px;        
+    .react-chat {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: $psh-red;
+        height: 6rem;
+        img {
+            margin-left: 10px;
+            width: auto;
+            height: 50px;
+        }
+        h1 {
+            font-size: 1.5rem;
+            color:$psh-white;
+            margin-left: 10px;
+        }
     }
-    &:hover {
-        background-color: rgb(65, 64, 64);
-    }
-    &:active {
-        border-right: 3px red solid;
-    }
+
 }
