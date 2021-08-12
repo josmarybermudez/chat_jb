@@ -29,7 +29,7 @@ export class Sidebar extends Component {
 									<img className='chat-icon' src={item.icon} />
 									<div className='chat-info'>
 										<h4 className='chat-name'>{item.chatName}</h4>
-										<p>{item.lastMessage}</p>
+										<p>{item.mensajitos[item.mensajitos.length-1].text}</p>
 									</div>
 									<div className='chat-time'>
 										<p>{item.time}</p>

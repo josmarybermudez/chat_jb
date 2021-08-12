@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { sidebarChat, messages } from './data/sidebar';
+import { sidebarChat } from './data/sidebar';
 import './styles/chats.scss';
 
 export class Chats extends Component {
@@ -7,21 +7,18 @@ export class Chats extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			chatCliked: false,
             value: '',
 		};
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.messages = messages;
+        this.messages = () => {
+            return sidebarChat.map((item) => {
+                const mensajitos = item.mensajitos;
+                return mensajitos
+            })
+        };
 	}
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({value: event.target.value});
     }
-    handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-    }
-
 
     sendInfo = () => {
         const message = this.state.value;
@@ -39,8 +36,14 @@ export class Chats extends Component {
         this.setState({value: ''});
     }
 
-    getMessages(id) {
-        return this.messages[id];
+    getMessages = (id) => {
+        let mensajes = [];
+        sidebarChat.forEach(item => {
+            if (item.id == id) {
+                mensajes = item.mensajitos;
+            }
+        });
+        return mensajes
     }
 
     getTopbar() {
@@ -57,13 +60,14 @@ export class Chats extends Component {
         }
 
         return (
-            <li className='chat' >
+            <li className='chat'>
                 <img className='chat-icon' src={currentUser.icon} alt="" />
                 <div className='chat-info'>
                     <h4 className='chat-name'>{currentUser.chatName}</h4>
                 </div>
             </li>
         );
+        
     }
 
     render () {
@@ -75,17 +79,16 @@ export class Chats extends Component {
                     </div>
                     <div className='messagesInColumn' >
                         {
-                            this.getMessages(this.props.userId)?.map((message) => {
+                            this.getMessages(this.props.userId)?.map(message => {
                                 const classByType = `msg ${message.type == 1 ? 'received' : 'sent'}`;
-
+                                
                                 return (
-                                    <div className={classByType}>
+                                    <div className={classByType} >
                                         {message.text}
                                     </div>
                                 );
                             })
                         }
-
                     </div>
                     <div className='input' >
                         <input id='input-msg' className='input-msg' type="text" placeholder='type your message...' value={this.state.value} onChange={this.handleChange} />

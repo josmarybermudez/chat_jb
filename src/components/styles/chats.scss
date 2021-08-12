@@ -1,5 +1,6 @@
 @import '../../styles/global.scss';
 @import '../../styles/variables.scss';
+
 .display {
     height: 41rem;
     width: 30rem;
@@ -9,7 +10,7 @@
     background-color: $psh-light-grey;
     .profile-bar {
         height: 6.5rem;
-        .chat {
+        .chat { 
             height: 100%;
             justify-content: start;
             background-color: $psh-white;
@@ -32,15 +33,16 @@
             }
         }
     }
-    .messagesInColumn { 
+    .messagesInColumn {
         height: 31rem;
+        overflow-y: auto; //to be able to make a vertical scroll down 
         display: flex;
         flex-direction: column;
         .msg{ 
             box-shadow: 5px 5px 5px grey;
-            height: auto;
+            height: fit-content;
             width: auto;
-            max-width: 28rem;
+            max-width: 24rem;
             margin: 10px;
             padding: 10px;
             background-color: white;
